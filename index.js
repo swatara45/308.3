@@ -35,11 +35,10 @@ function findNextPrime(n) {
       console.log(currentNum); // Log the prime number
       break; // Exit the loop once the prime is found
     }
-    currentNum++; // Increment the number and check the next one
+    currentNum++; 
   }
 }
 
-// Test the function with different values of n
 findNextPrime(4);  // Expected output: 5
 findNextPrime(5);  // Expected output: 7
 findNextPrime(9);  // Expected output: 11
