@@ -1,32 +1,16 @@
   
   // Question 1
-  for (let i = 1; i <= 100; i++){
+ for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('Fizz Buzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
     console.log(i);
   }
-
-  for (let i = 3; i <= 100; i+=3) {
-      if (i % 3 === 0) {
-        console.log(`fizz`);
-      }
-    }
-
-    for (let i = 5; i <= 100; i+=5) {
-      if (i % 5 === 0) {
-        console.log('Buzz');
-      }
-    }
-
-    for (let i = 5; i <= 100; i+=5) {
-      if (i % 3 === 0 && i % 5 === 0) {
-        console.log('Fizz Buzz');
-      }
-    }
-
-    for (let i = 5; i <= 100; i++) {
-      if (i % 3 !== 0 && i % 5 !== 0) {
-        console.log(i);
-      }
-    }
+}
 
     //Question 2
 
