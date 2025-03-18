@@ -48,47 +48,45 @@ findNextPrime(9);  // Expected output: 11
 
 // Question 3
 
-// Function to parse and log CSV data
-function parseCSV(csvString) {
-  let currentCell = '';
-  let rowData = [];
-  
-  // Loop through each character in the CSV string
-  for (let i = 0; i < csvString.length; i++) {
-    let char = csvString[i];
+let str = 'ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26'
 
-    if (char === ',') {
-      rowData.push(currentCell);
-      currentCell = '';
-    }
-    
-    // Handle new row (\r\n or \n): log current row and reset
-    else if (char === '\n' || (csvString[i] === '\r' && csvString[i + 1] === '\n')) {
-      rowData.push(currentCell);  
-      console.log(...rowData);  
-      rowData = [];  
-      currentCell = '';  
-      
-      // Skip the \r character if we encounter \r\n
-      if (csvString[i] === '\r') {
-        i++;  // Skip next character, which is '\n'
-      }
-    }
-    
-    // Otherwise, continue accumulating characters for the current cell
-    else {
-      currentCell += char;
-    }
-  }
-  
-  // If there's any remaining cell data after the loop, log it
-  if (currentCell.length > 0) {
-    rowData.push(currentCell);
-    console.log(...rowData);
-  }
+let cell1 = '';
+let cell2 = '';
+let cell3 = '';
+let cell4 = '';
+let commas = 0;
+
+for (let i = 0; i < str.length; i++) {
+if (str[i] === ',') {
+// if char is a comma, do this
+commas++;
+} else if (str[i] === '\n') {
+//If char is a "\n", do this\
+console.log(cell1, cell2, cell3, cell4);
+commas = 0;
+cell1 = ``;
+cell2 = ``;
+cell3 = ``;
+cell4 = ``;
+
+} else {
+// any other char
+if (commas == 0) {
+// if 0 commas
+cell1 += str[i];
+} else if (commas == 1) {
+// if 1 commas
+cell2 += str[i];
+} else if (commas == 2) {
+// if 2 commas
+cell3 += str[i];
+} else {
+// if 3 or more
+cell4 += str[i];
+}
 }
 
-// Example CSV string (can replace with other test data)
-const csvString = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
-
-parseCSV(csvString);
+if(i === str.length - 1) { // if index number is the same as length of string
+console.log(cell1, cell2, cell3, cell4);
+}
+}
