@@ -1,5 +1,9 @@
   
   // Question 1
+  for (let i = 1; i <= 100; i++){
+    console.log(i);
+  }
+
   for (let i = 3; i <= 100; i+=3) {
       if (i % 3 === 0) {
         console.log(`fizz`);
